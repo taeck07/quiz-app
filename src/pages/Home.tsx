@@ -39,12 +39,11 @@ export const Home = () => {
         <FormControl  sx={{ m: 1, minWidth: 80 }}>
           <InputLabel id="demo-simple-select-label">Category</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
             value={category+''}
             label="Category"
             onChange={onCategoryChange}
             autoWidth
+            data-testid="select-category"
           >
             {
               CategoryList.map(({value, label}) => <MenuItem value={value} key={value}> {label}</MenuItem>)
@@ -54,12 +53,11 @@ export const Home = () => {
         <FormControl  sx={{ m: 1, minWidth: 80 }}>
           <InputLabel id="demo-simple-select-label">Count</InputLabel>
           <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
               value={count+''}
               label="Count"
               onChange={onCountChange}
               autoWidth
+              data-testid="select-count"
           >
             {
               CountArray.map((value, label) => <MenuItem value={value} key={value}>{value}</MenuItem>)
@@ -69,12 +67,11 @@ export const Home = () => {
         <FormControl  sx={{ m: 1, minWidth: 80 }}>
           <InputLabel id="demo-simple-select-label">Difficulty</InputLabel>
           <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
               value={difficulty}
               label="Difficulty"
               onChange={onDifficultyChange}
               autoWidth
+              data-testid="select-difficulty"
           >
             <MenuItem value="easy">쉬움</MenuItem>
             <MenuItem value="medium">중간</MenuItem>
@@ -83,7 +80,7 @@ export const Home = () => {
         </FormControl>
       </div>
       <div>
-        <Button onClick={onStartHandler}>Start</Button>
+        <Button onClick={onStartHandler} data-testid='submit'>Start</Button>
       </div>
     </HomeContainer>
   );
